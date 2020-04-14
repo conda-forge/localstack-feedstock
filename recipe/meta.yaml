@@ -18,7 +18,6 @@ requirements:
   host:
     - pip
     - python
-
   run:
     - boto3
     - docopt
@@ -26,7 +25,6 @@ requirements:
     - localstack-ext
     - python
     - six
-    - subprocess32        # [py2k]
 
 test:
   imports:

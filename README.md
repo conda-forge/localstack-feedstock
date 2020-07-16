@@ -5,7 +5,7 @@ Home: https://github.com/localstack/localstack
 
 Package license: Apache-2.0
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: An easy-to-use test/mocking framework for developing Cloud applications
 

@@ -5,11 +5,13 @@ Home: https://github.com/localstack/localstack
 
 Package license: Apache-2.0
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/localstack-feedstock/blob/master/LICENSE.txt)
 
 Summary: An easy-to-use test/mocking framework for developing Cloud applications
 
+Development: https://github.com/localstack/localstack
 
+Documentation: https://pypi.org/project/localstack/
 
 Current build status
 ====================

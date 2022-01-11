@@ -1,13 +1,14 @@
 {% set name = "localstack" %}
-{% set version = "0.12.4" %}
+{% set version = "0.13.3" %}
+
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: e94c0e88a051331af94208ce18279d46a49890d104d88bfbe16af4e42042fffe
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/localstack-{{ version }}.tar.gz
+  sha256: 32047f20788d1b949a857fe77b9548724ea766259da430b4c71f85f96edaccef
 
 build:
   number: 0
@@ -18,40 +19,34 @@ requirements:
   host:
     - pip
     - python
+    - localstack-plugin-loader
+
   run:
-    - boto3
-    - docopt
-    - localstack-client
+    - boto3 >=1.20
+    - click >=7.0
+    - dataclasses  # [py<37]
+    - docker-py ==5.0.0
+    - localstack-client >=1.28
     - localstack-ext
+    - localstack-plugin-loader >=0.1.0
+    - psutil <6.0.0,>=5.4.8
     - python
-    - six
+    - python-dotenv >=0.19.1
+    - pyyaml >=5.1
+    - requests <2.26,>=2.20.0
+    - rich >=10.7.0
+    - semver >=2.10
+    - six >=1.12.0
+    - stevedore >=3.4.0
+    - tailer >=0.4.1
+    - typing-extensions  # [py<38]
 
 test:
   imports:
     - localstack
-    - localstack.dashboard
-    - localstack.services
-    - localstack.services.apigateway
-    - localstack.services.awslambda
-    - localstack.services.cloudformation
-    - localstack.services.dynamodb
-    - localstack.services.dynamodbstreams
-    - localstack.services.es
-    - localstack.services.firehose
-    - localstack.services.iam
-    - localstack.services.kinesis
-    - localstack.services.s3
-    - localstack.services.sns
-    - localstack.services.sqs
-    - localstack.services.stepfunctions
-    - localstack.stepfunctions
-    - localstack.utils
-    - localstack.utils.analytics
-    - localstack.utils.aws
-    - localstack.utils.cloudformation
-    - localstack.utils.cloudwatch
-    - localstack.utils.kinesis
-    - localstack.utils.server
+  commands:
+    - python -c "import importlib.util; assert importlib.util.find_spec('localstack')"
+  
 
 about:
   home: https://github.com/localstack/localstack
@@ -64,6 +59,4 @@ about:
 
 extra:
   recipe-maintainers:
-    - mwilson8
-    - oblute
-    - rluria14
+    - mxr-conda

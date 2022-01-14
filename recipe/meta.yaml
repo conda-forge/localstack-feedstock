@@ -1,5 +1,5 @@
 {% set name = "localstack" %}
-{% set version = "0.13.3" %}
+{% set version = "0.13.3.1" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/localstack-{{ version }}.tar.gz
-  sha256: 32047f20788d1b949a857fe77b9548724ea766259da430b4c71f85f96edaccef
+  sha256: 56f90e6dc93bdff263187cb08625c93d5c94d51e274412b3320b31c56bbfecbd
 
 build:
   number: 0
@@ -46,7 +46,7 @@ test:
     - localstack
   commands:
     - python -c "import importlib.util; assert importlib.util.find_spec('localstack')"
-  
+
 
 about:
   home: https://github.com/localstack/localstack

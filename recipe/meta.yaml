@@ -1,5 +1,5 @@
 {% set name = "localstack" %}
-{% set version = "0.14.2.1" %}
+{% set version = "0.14.2.2" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/localstack-{{ version }}.tar.gz
-  sha256: 2893ede1db93db7871ca922ab4e78caa7e6f0cb23b61a8a0625e1b5566a97faa
+  sha256: 615401263c71fd4ff1ce046d86fe1dc42c399ab1ea4916f9ca77931a2b1fd5ac
 
 build:
   number: 0
